@@ -102,4 +102,14 @@ public class MarsRoverTest {
 
         assertEquals(new Location(0, -4), rover.location());
     }
+
+    @Test
+    public void shouldStayAtSamePosition_WhenMovingForwardAndBackward2TimesEachAnyDirection() {
+        MarsRover rover = new MarsRover(0, 0, Facing.SOUTH);
+
+        List<Character> direction = Arrays.asList('f', 'f', 'b', 'b');
+        rover.move(direction);
+
+        assertEquals(new Location(0, 0), rover.location());
+    }
 }
