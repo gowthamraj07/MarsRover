@@ -4,6 +4,11 @@ public class Location {
     private int x;
     private int y;
 
+    public Location(int xAxis, int yAxis) {
+        x = xAxis;
+        y = yAxis;
+    }
+
     public int getX() {
         return x;
     }
@@ -14,9 +19,5 @@ public class Location {
 
     public int getY() {
         return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
     }
 }

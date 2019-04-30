@@ -1,6 +1,7 @@
 package com.coding.dojo;
 
 
+import com.coding.dojo.domain.Facing;
 import com.coding.dojo.domain.Location;
 import org.junit.Test;
 
@@ -9,8 +10,11 @@ import static org.junit.Assert.assertEquals;
 public class MarsRoverTest {
 
     @Test
-    public void shouldMove1StepForward() {
-        MarsRover rover = new MarsRover();
+    public void shouldMove1StepForward_FromOriginPointingNorth() {
+        int xAxis = 0;
+        int yAxis = 0;
+        Facing facing = Facing.NORTH;
+        MarsRover rover = new MarsRover(xAxis, yAxis, facing);
 
         char[] direction = new char[1];
         direction[0] = 'f';
