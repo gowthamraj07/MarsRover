@@ -20,4 +20,8 @@ public class Location {
     public int getY() {
         return y;
     }
+
+    public void setY(int i) {
+        this.y = i;
+    }
 }
