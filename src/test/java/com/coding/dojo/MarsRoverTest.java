@@ -5,6 +5,9 @@ import com.coding.dojo.domain.Facing;
 import com.coding.dojo.domain.Location;
 import org.junit.Test;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 public class MarsRoverTest {
@@ -16,8 +19,8 @@ public class MarsRoverTest {
         Facing facing = Facing.EAST;
         MarsRover rover = new MarsRover(xAxis, yAxis, facing);
 
-        char[] direction = new char[1];
-        direction[0] = 'f';
+        List<Character> direction = new LinkedList<Character>();
+        direction.add('f');
         rover.move(direction);
         Location location = rover.location();
 
@@ -32,8 +35,8 @@ public class MarsRoverTest {
         Facing facing = Facing.NORTH;
         MarsRover rover = new MarsRover(xAxis, yAxis, facing);
 
-        char[] direction = new char[1];
-        direction[0] = 'b';
+        List<Character> direction = new LinkedList<Character>();
+        direction.add('b');
         rover.move(direction);
         Location location = rover.location();
 
@@ -48,11 +51,12 @@ public class MarsRoverTest {
         Facing facing = Facing.NORTH;
         MarsRover rover = new MarsRover(xAxis, yAxis, facing);
 
-        char[] direction = new char[4];
-        direction[0] = 'b';
-        direction[1] = 'b';
-        direction[2] = 'b';
-        direction[3] = 'b';
+        //char[] direction = new List[4];
+        List<Character> direction = new LinkedList<Character>();
+        direction.add('b');
+        direction.add('b');
+        direction.add('b');
+        direction.add('b');
         rover.move(direction);
         Location location = rover.location();
 

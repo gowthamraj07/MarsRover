@@ -3,6 +3,8 @@ package com.coding.dojo;
 import com.coding.dojo.domain.Facing;
 import com.coding.dojo.domain.Location;
 
+import java.util.List;
+
 public class MarsRover {
 
     private final Location location;
@@ -15,11 +17,11 @@ public class MarsRover {
         return location;
     }
 
-    public void move(char[] direction) {
-        if (direction[0] == 'b') {
-            location.setY(-direction.length);
+    public void move(List<Character> direction) {
+        if (direction.get(0) == 'b') {
+            location.setY(-direction.size());
         }
-        else if (direction[0] == 'f') {
+        else if (direction.get(0) == 'f') {
             location.setX(1);
         }
     }
