@@ -20,15 +20,33 @@ public class MarsRover {
     }
 
     public void move(List<Character> direction) {
-        if (direction.get(0) == 'b') {
-            int multiplicationFactor = 1;
-            if (facing == Facing.NORTH) {
-                multiplicationFactor = -1;
-            }
+        for(Character command : direction) {
+            moveTo(command);
+        }
+    }
 
-            location.setY(multiplicationFactor * direction.size());
-        } else if (direction.get(0) == 'f') {
-            location.setX(direction.size());
+    private void moveTo(Character command) {
+
+        if (command == 'b') {
+            switch (facing) {
+                case NORTH:
+                    location.decrementY();
+                    break;
+                case SOUTH:
+                    location.incrementY();
+                    break;
+                case EAST:
+                    location.decrementX();
+                    break;
+            }
+        }
+
+        if (command == 'f') {
+            switch (facing) {
+                case EAST:
+                    location.incrementX();
+                    break;
+            }
         }
     }
 }
