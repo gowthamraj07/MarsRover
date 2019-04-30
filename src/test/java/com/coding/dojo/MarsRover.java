@@ -22,7 +22,7 @@ public class MarsRover {
             location.setY(-direction.size());
         }
         else if (direction.get(0) == 'f') {
-            location.setX(1);
+            location.setX(direction.size());
         }
     }
 }
