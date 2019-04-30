@@ -24,4 +24,14 @@ public class Location {
     public void setY(int i) {
         this.y = i;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Location)) {
+            return false;
+        }
+
+        Location param = (Location)obj;
+        return x == param.x && y == param.y;
+    }
 }

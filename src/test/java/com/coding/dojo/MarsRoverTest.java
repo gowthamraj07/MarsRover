@@ -15,64 +15,41 @@ public class MarsRoverTest {
 
     @Test
     public void shouldMove1StepForward_FromOriginFacingEast() {
-        int xAxis = 0;
-        int yAxis = 0;
-        Facing facing = Facing.EAST;
-        MarsRover rover = new MarsRover(xAxis, yAxis, facing);
+        MarsRover rover = new MarsRover(0, 0, Facing.EAST);
 
         List<Character> direction = Collections.singletonList('f');
         rover.move(direction);
-        Location location = rover.location();
 
-        assertEquals(1, location.getX());
-        assertEquals(0, location.getY());
+        assertEquals(new Location(1,0), rover.location());
     }
 
     @Test
     public void shouldMove1StepBackward_FromOriginFacingNorth() {
-        int xAxis = 0;
-        int yAxis = 0;
-        Facing facing = Facing.NORTH;
-        MarsRover rover = new MarsRover(xAxis, yAxis, facing);
+        MarsRover rover = new MarsRover(0, 0, Facing.NORTH);
 
         List<Character> direction = Collections.singletonList('b');
         rover.move(direction);
-        Location location = rover.location();
 
-        assertEquals(0, location.getX());
-        assertEquals(-1, location.getY());
+        assertEquals(new Location(0, -1), rover.location());
     }
 
     @Test
     public void shouldMove4StepsBackward_FromOriginFacingNorth() {
-        int xAxis = 0;
-        int yAxis = 0;
-        Facing facing = Facing.NORTH;
-        MarsRover rover = new MarsRover(xAxis, yAxis, facing);
+        MarsRover rover = new MarsRover(0, 0, Facing.NORTH);
 
-        //char[] direction = new List[4];
         List<Character> direction = Arrays.asList('b', 'b', 'b', 'b');
         rover.move(direction);
-        Location location = rover.location();
 
-        assertEquals(0, location.getX());
-        assertEquals(-4, location.getY());
+        assertEquals(new Location(0, -4), rover.location());
     }
 
     @Test
     public void shouldMove4StepsBackward_FromOriginFacingSouth() {
-        int xAxis = 0;
-        int yAxis = 0;
-        Facing facing = Facing.SOUTH;
-        MarsRover rover = new MarsRover(xAxis, yAxis, facing);
+        MarsRover rover = new MarsRover(0, 0, Facing.SOUTH);
 
-        //char[] direction = new List[4];
         List<Character> direction = Arrays.asList('b', 'b', 'b', 'b');
         rover.move(direction);
-        Location location = rover.location();
 
-        assertEquals(0, location.getX());
-        assertEquals(4, location.getY());
+        assertEquals(new Location(0, 4), rover.location());
     }
-
 }
