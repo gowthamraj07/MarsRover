@@ -5,7 +5,8 @@ import com.coding.dojo.domain.Facing;
 import com.coding.dojo.domain.Location;
 import org.junit.Test;
 
-import java.util.LinkedList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -19,8 +20,7 @@ public class MarsRoverTest {
         Facing facing = Facing.EAST;
         MarsRover rover = new MarsRover(xAxis, yAxis, facing);
 
-        List<Character> direction = new LinkedList<Character>();
-        direction.add('f');
+        List<Character> direction = Collections.singletonList('f');
         rover.move(direction);
         Location location = rover.location();
 
@@ -35,8 +35,7 @@ public class MarsRoverTest {
         Facing facing = Facing.NORTH;
         MarsRover rover = new MarsRover(xAxis, yAxis, facing);
 
-        List<Character> direction = new LinkedList<Character>();
-        direction.add('b');
+        List<Character> direction = Collections.singletonList('b');
         rover.move(direction);
         Location location = rover.location();
 
@@ -52,11 +51,7 @@ public class MarsRoverTest {
         MarsRover rover = new MarsRover(xAxis, yAxis, facing);
 
         //char[] direction = new List[4];
-        List<Character> direction = new LinkedList<Character>();
-        direction.add('b');
-        direction.add('b');
-        direction.add('b');
-        direction.add('b');
+        List<Character> direction = Arrays.asList('b', 'b', 'b', 'b');
         rover.move(direction);
         Location location = rover.location();
 
@@ -72,15 +67,12 @@ public class MarsRoverTest {
         MarsRover rover = new MarsRover(xAxis, yAxis, facing);
 
         //char[] direction = new List[4];
-        List<Character> direction = new LinkedList<Character>();
-        direction.add('b');
-        direction.add('b');
-        direction.add('b');
-        direction.add('b');
+        List<Character> direction = Arrays.asList('b', 'b', 'b', 'b');
         rover.move(direction);
         Location location = rover.location();
 
         assertEquals(0, location.getX());
         assertEquals(4, location.getY());
     }
+
 }
