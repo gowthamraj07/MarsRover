@@ -72,4 +72,14 @@ public class MarsRoverTest {
 
         assertEquals(new Location(4, 0), rover.location());
     }
+
+    @Test
+    public void shouldMove4StepsForward_FromOriginFacingWest() {
+        MarsRover rover = new MarsRover(0, 0, Facing.WEST);
+
+        List<Character> direction = Arrays.asList('f', 'f', 'f', 'f');
+        rover.move(direction);
+
+        assertEquals(new Location(-4, 0), rover.location());
+    }
 }
