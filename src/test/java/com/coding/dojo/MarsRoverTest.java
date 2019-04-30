@@ -40,4 +40,23 @@ public class MarsRoverTest {
         assertEquals(0, location.getX());
         assertEquals(-1, location.getY());
     }
+
+    @Test
+    public void shouldMove4StepsBackward_FromOriginFacingNorth() {
+        int xAxis = 0;
+        int yAxis = 0;
+        Facing facing = Facing.NORTH;
+        MarsRover rover = new MarsRover(xAxis, yAxis, facing);
+
+        char[] direction = new char[4];
+        direction[0] = 'b';
+        direction[1] = 'b';
+        direction[2] = 'b';
+        direction[3] = 'b';
+        rover.move(direction);
+        Location location = rover.location();
+
+        assertEquals(0, location.getX());
+        assertEquals(-4, location.getY());
+    }
 }

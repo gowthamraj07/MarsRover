@@ -17,9 +17,9 @@ public class MarsRover {
 
     public void move(char[] direction) {
         if (direction[0] == 'b') {
-            location.setY(-1);
+            location.setY(-direction.length);
         }
-        else {
+        else if (direction[0] == 'f') {
             location.setX(1);
         }
     }
