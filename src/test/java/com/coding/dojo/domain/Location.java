@@ -56,11 +56,11 @@ public class Location {
         x++;
     }
 
-    public void addY(int step) {
+    public void moveY(int step) {
         y += step;
     }
 
-    public void addX(int step) {
+    public void moveX(int step) {
         x += step;
     }
 }

@@ -11,13 +11,13 @@ public class MarsRover {
 
     private final Location location;
     private Facing facing;
-    private Map<Character, Integer> commandMap = new HashMap<Character, Integer>();
+    private Map<Character, Integer> commandDirectionMap = new HashMap<Character, Integer>();
 
     public MarsRover(int xAxis, int yAxis, Facing facing) {
         this.facing = facing;
         location = new Location(xAxis, yAxis);
-        commandMap.put('b', -1);
-        commandMap.put('f', 1);
+        commandDirectionMap.put('b', -1);
+        commandDirectionMap.put('f', 1);
     }
 
     public Location location() {
@@ -32,20 +32,20 @@ public class MarsRover {
 
     private void moveTo(Character command) {
 
-        int direction = commandMap.get(command);
+        int direction = commandDirectionMap.get(command);
 
         switch (facing) {
             case NORTH:
-                location.addY(direction);
+                location.moveY(direction);
                 break;
             case SOUTH:
-                location.addY(-direction);
+                location.moveY(-direction);
                 break;
             case EAST:
-                location.addX(direction);
+                location.moveX(direction);
                 break;
             case WEST:
-                location.addX(-direction);
+                location.moveX(-direction);
                 break;
         }
     }
