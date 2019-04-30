@@ -55,4 +55,12 @@ public class Location {
     public void incrementX() {
         x++;
     }
+
+    public void addY(int step) {
+        y += step;
+    }
+
+    public void addX(int step) {
+        x += step;
+    }
 }
