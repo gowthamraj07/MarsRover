@@ -52,6 +52,12 @@ public class MarsRover {
                 case WEST:
                     location.decrementX();
                     break;
+                case NORTH:
+                    location.incrementY();
+                    break;
+                case SOUTH:
+                    location.decrementY();
+                    break;
             }
         }
     }
