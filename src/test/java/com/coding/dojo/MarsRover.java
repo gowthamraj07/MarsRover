@@ -46,17 +46,17 @@ public class MarsRover {
 
         if (command == 'f') {
             switch (facing) {
-                case EAST:
-                    location.incrementX();
-                    break;
-                case WEST:
-                    location.decrementX();
-                    break;
                 case NORTH:
                     location.incrementY();
                     break;
                 case SOUTH:
                     location.decrementY();
+                    break;
+                case EAST:
+                    location.incrementX();
+                    break;
+                case WEST:
+                    location.decrementX();
                     break;
             }
         }
