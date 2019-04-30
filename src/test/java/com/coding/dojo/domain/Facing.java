@@ -1,5 +1,5 @@
 package com.coding.dojo.domain;
 
 public enum Facing {
-    EAST,NORTH
+    EAST, SOUTH, NORTH
 }
