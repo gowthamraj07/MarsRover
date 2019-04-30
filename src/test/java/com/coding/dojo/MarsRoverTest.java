@@ -10,10 +10,10 @@ import static org.junit.Assert.assertEquals;
 public class MarsRoverTest {
 
     @Test
-    public void shouldMove1StepForward_FromOriginPointingNorth() {
+    public void shouldMove1StepForward_FromOriginFacingEast() {
         int xAxis = 0;
         int yAxis = 0;
-        Facing facing = Facing.NORTH;
+        Facing facing = Facing.EAST;
         MarsRover rover = new MarsRover(xAxis, yAxis, facing);
 
         char[] direction = new char[1];
